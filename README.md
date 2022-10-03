@@ -19,4 +19,4 @@ java = CodeBlock(
 )
 ```
 Outputs:<br>
-<video src="assets/java_demo.mp4"></video>
+<video src="https://github.com/NicholasIapalucci/Manim-Code-Blocks/blob/main/assets/java_demo.mp4"></video>
