@@ -27,4 +27,5 @@ class Main(Scene):
         self.play(*java.create())
 ```
 Outputs:<br>
-<video src="https://github.com/NicholasIapalucci/Manim-Code-Blocks/blob/main/assets/java_demo.mp4"></video>
+
+https://github.com/NicholasIapalucci/Manim-Code-Blocks/blob/main/assets/java_demo.mp4

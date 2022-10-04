@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/manim_code_blocks.py
+src/manim_code_blocks.egg-info/PKG-INFO
+src/manim_code_blocks.egg-info/SOURCES.txt
+src/manim_code_blocks.egg-info/dependency_links.txt
+src/manim_code_blocks.egg-info/top_level.txt

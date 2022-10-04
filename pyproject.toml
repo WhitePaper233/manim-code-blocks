@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "manim_code_blocks"
-version = "1.0.1"
+version = "1.0.0"
 description = "Animate highlighted blocks of code in Manim"
 readme = "README.md"
 authors = [{ name = "Nicholas Iapalucci"}]
@@ -18,4 +18,4 @@ classifiers = [
 requires-python = ">=3.9"
 
 [project.urls]
-Homepage = "https://github.com/NicholasIapalucci/Tokenize-All"
+Homepage = "https://github.com/NicholasIapalucci/Manim-Code-Blocks"
