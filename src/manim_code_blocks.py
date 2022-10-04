@@ -8,7 +8,7 @@ from urllib.request import urlopen
 
 
 class Theme:
-    """A theme used to syntax highlight a code block."""
+    """A theme used to syntax highlight a `CodeBlock`."""
     
     colors: dict[str, list[str]]
     """
@@ -17,7 +17,7 @@ class Theme:
 
     def __init__(self, colors: dict[str, list[str]]):
         """
-        Creates a new `Theme` with the specified `colors`. See the `colors` field for specification
+        Creates a new `Theme` with the specified `colors`. See the `colors` field for specification.
         """
         self.colors = colors
 
@@ -36,7 +36,8 @@ OneDark = Theme(
         "#E06C75": ["identifier"],
         "#98C379": ["string"],
         "#56B6C2": [],
-        "#E5C07B": ["class name", "number"],
+        "#D19A66": ["number", "keyword literal"],
+        "#E5C07B": ["class name"],
         GRAY_C: ["comment"]
     }
 )
@@ -151,7 +152,7 @@ class CodeBlock(VGroup):
         self.code_background = background_rect
         self.title_background = lang_background
 
-    def create(self, run_time: float = 1) -> tuple[FadeIn, AddTextLetterByLetter, FadeIn, AddTextLetterByLetter]:
+    def create(self, **kwargs) -> tuple[FadeIn, AddTextLetterByLetter, FadeIn, AddTextLetterByLetter]:
         """
         Return a tuple of animations for creating the code block. Use such as:\n
         ```
@@ -161,13 +162,13 @@ class CodeBlock(VGroup):
         By default the animation will `FadeIn` the `background` and `title_background`, and `AddTextLetterByLetter` the `code` and `title`. 
         """
         return (
-            FadeIn(self.code_background, run_time = run_time), 
-            AddTextLetterByLetter(self.code, run_time = run_time), 
-            FadeIn(self.title_background, run_time = run_time), 
-            AddTextLetterByLetter(self.title, run_time = run_time)
+            FadeIn(self.code_background, **kwargs), 
+            AddTextLetterByLetter(self.code, **kwargs), 
+            FadeIn(self.title_background, **kwargs), 
+            AddTextLetterByLetter(self.title, **kwargs)
         )
 
-    def uncreate(self, run_time: float = 1):
+    def uncreate(self, **kwargs):
         """
         Return a tuple of animations for uncreating the code block. Use such as:
         ```
@@ -177,44 +178,21 @@ class CodeBlock(VGroup):
         By default the animation will `FadeOut` the `background` and `title_background`, and `Uncreate` the `code` and `title`. 
         """
         return (
-            FadeOut(self.code_background, run_time = run_time), 
-            Uncreate(self.code, run_time = run_time), 
-            FadeOut(self.title_background, run_time = run_time), 
-            Uncreate(self.title, run_time = run_time)
+            FadeOut(self.code_background, **kwargs), 
+            Uncreate(self.code, **kwargs), 
+            FadeOut(self.title_background, **kwargs), 
+            Uncreate(self.title, **kwargs)
         )
 
 
 C = ProgrammingLanguage("C")
-"""The `C` programming language."""
+"""The `C` programming language, used to render `C` code in `CodeBlocks`"""
 
 Java = ProgrammingLanguage("Java")
-"""
-The `Java` programming language, used to render `Java` code in `CodeBlocks`:
-
-```python
-java = CodeBlock(
-    \"\"\"
-    public class Main {
-        public static void main(String[] args) {
-            System.out.println("Hello world");
-        }
-    }
-    \"\"\",
-    language = Java
-)
-self.add(java)
-```
-Outputs:
-```java
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world");
-    }
-}
-```
-"""
+"""The `Java` programming language, used to render `Java` code in `CodeBlocks`."""
 
 Python = ProgrammingLanguage("Python")
-"""The `Python` programming language."""
+"""The `Python` programming language, used to render `Python` code in `CodeBlocks`."""
+
 TypeScript = ProgrammingLanguage("TypeScript")
-"""The `TypeScript` programming language."""
+"""The `TypeScript` programming language, used to render `TypeScript` code in `CodeBlocks`"""
