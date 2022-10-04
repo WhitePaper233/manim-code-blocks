@@ -28,4 +28,4 @@ class Main(Scene):
 ```
 Outputs:<br>
 
-https://github.com/NicholasIapalucci/Manim-Code-Blocks/blob/main/assets/java_demo.mp4
+![](https://github.com/NicholasIapalucci/Manim-Code-Blocks/blob/main/assets/java_demo.mp4)
