@@ -24,7 +24,7 @@ class Main(Scene):
             language = Java
         )
 
-        self.play(*java.create())
+        self.play(*java.create(run_time = 3))
 ```
 Outputs:<br>
 
