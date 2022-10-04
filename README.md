@@ -28,4 +28,4 @@ class Main(Scene):
 ```
 Outputs:<br>
 
-![](assets/java_demo.mp4)
+![](assets/java_demo.gif)
