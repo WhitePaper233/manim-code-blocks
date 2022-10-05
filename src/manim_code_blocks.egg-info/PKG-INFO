@@ -59,7 +59,30 @@ class Main(Scene):
             language = Java
         )
 
-        self.play(*java.create())
+        self.play(*java.create(run_time = 3))
 ```
 Outputs:<br>
-<video src="https://github.com/NicholasIapalucci/Manim-Code-Blocks/blob/main/assets/java_demo.mp4"></video>
+
+![](assets/java_demo.gif)
+
+## Problems & Limitations
+
+### Limited Language Support
+Currently only the following languages are supported for syntax highlighting:
+
+- C
+- C#
+- C++
+- Java
+- JavaScript
+- Lua
+- Go
+- Python
+- Rust
+- TypeScript
+
+To add language support, read the new language support guide and submit a pull request.
+
+### Unintelligent Highlighting
+
+The syntax highlighting provided by `Manim-Code-Blocks` is largely trival and can in many cases be inaccurate. The source code is only tokenized, not parsed, and as such accurate token type identification can be impossible for certain circumstances. Syntax highlighting is provided by the [Tokenize-All](https://github.com/NicholasIapalucci/Tokenize-All) module, which is also largely trival and lacks thorough language support. 

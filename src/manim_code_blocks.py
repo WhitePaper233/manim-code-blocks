@@ -64,10 +64,13 @@ class ProgrammingLanguage(abstract):
     The `TokenizableLanguage` of the language. 
     """
 
-    def __init__(self, name):
+    def __init__(self, name, tokenize_name = None):
         self.name = name
-        self.language = getattr(tokenize_all, name)
+        self.language = getattr(tokenize_all, tokenize_name if tokenize_name else name)
         self.color = language_colors[name]["color"]
+
+        if self.color == None: print(f"Warning: no color found for {name}")
+        if self.language == None: print(f"Warning: no tokenization found for {name}")
 
 
 class CodeBlock(VGroup):
@@ -188,11 +191,38 @@ class CodeBlock(VGroup):
 C = ProgrammingLanguage("C")
 """The `C` programming language, used to render `C` code in `CodeBlocks`"""
 
+Cpp = ProgrammingLanguage("C++", tokenize_name="Cpp")
+"""The `C++` programming language, used to render `C++` code in `CodeBlocks`."""
+
+CSharp = ProgrammingLanguage("C#", tokenize_name="CSharp")
+"""The `C#` programming language, used to render `C#` code in `CodeBlocks`."""
+
+Go = ProgrammingLanguage("Go")
+"""The `Go` programming language, used to render `Go` code in `CodeBlocks`."""
+
+Haskell = ProgrammingLanguage("Haskell")
+"""The `Haskell` programming language, used to render `Haskell` code in `CodeBlocks`."""
+
 Java = ProgrammingLanguage("Java")
 """The `Java` programming language, used to render `Java` code in `CodeBlocks`."""
 
+JavaScript = ProgrammingLanguage("JavaScript")
+"""The `JavaScript` programming language, used to render `JavaScript` code in `CodeBlocks`."""
+
+Lua = ProgrammingLanguage("Lua")
+"""The `Lua` programming language, used to render `Lua` code in `CodeBlocks`. """
+
 Python = ProgrammingLanguage("Python")
 """The `Python` programming language, used to render `Python` code in `CodeBlocks`."""
+
+Ruby = ProgrammingLanguage("Ruby")
+"""The `Ruby` programming language, used to render `Ruby` code in `CodeBlocks`."""
+
+Rust = ProgrammingLanguage("Rust")
+"""The `Rust` programming language, used to render `Rust` code in `CodeBlocks`."""
+
+SQL = ProgrammingLanguage("SQL")
+"""The `SQL` programming language, used to render `SQL` code in `CodeBlocks`."""
 
 TypeScript = ProgrammingLanguage("TypeScript")
 """The `TypeScript` programming language, used to render `TypeScript` code in `CodeBlocks`"""
