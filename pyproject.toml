@@ -15,6 +15,9 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent"
 ]
+dependencies = [
+    "tokenize_all",
+]
 requires-python = ">=3.9"
 
 [project.urls]
